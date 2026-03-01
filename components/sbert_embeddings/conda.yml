@@ -1,0 +1,15 @@
+name: sbert_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pip
+  - pandas
+  - numpy
+  - pip:
+    - sentence-transformers
+    - torch
+    - transformers
+    - azureml-core
+    - azureml-defaults

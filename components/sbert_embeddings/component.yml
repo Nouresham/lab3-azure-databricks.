@@ -1,0 +1,28 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+name: sbert_embeddings
+display_name: SBERT Embeddings
+type: command
+
+inputs:
+  data:
+    type: uri_folder
+  model_name:
+    type: string
+    default: "all-MiniLM-L6-v2"
+    optional: true
+
+outputs:
+  out:
+    type: uri_folder
+
+code: .
+
+command: >-
+  python sbert.py 
+  --data ${{inputs.data}} 
+  --out ${{outputs.out}}
+  --model_name ${{inputs.model_name}}
+
+environment:
+  conda_file: conda.yml
+  image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest
