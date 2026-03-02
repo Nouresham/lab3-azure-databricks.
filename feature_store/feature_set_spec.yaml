@@ -1,0 +1,39 @@
+source:
+  type: parquet
+  path: azureml:amazon_electronics_features_v1_sampled_merged@latest
+  timestamp_column:  # Optional - if you have timestamp
+    name: reviewTime
+    format: "%Y-%m-%d"
+
+index_columns:
+  - asin
+  - reviewerID
+
+features:
+  # Length features
+  - name: review_length_chars
+    type: integer
+    description: Number of characters in review
+  - name: review_length_words
+    type: integer
+    description: Number of words in review
+  
+  # Sentiment features
+  - name: sentiment_neg
+    type: double
+    description: Negative sentiment score
+  - name: sentiment_neu
+    type: double
+    description: Neutral sentiment score
+  - name: sentiment_pos
+    type: double
+    description: Positive sentiment score
+  - name: sentiment_compound
+    type: double
+    description: Compound sentiment score
+  
+  # TF-IDF features (dynamic - this is just a placeholder)
+  # Actual TF-IDF features will be registered dynamically
+  
+  # BERT embeddings (dynamic)
+  # Actual BERT features will be registered dynamically
