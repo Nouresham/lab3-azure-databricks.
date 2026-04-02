@@ -1,0 +1,7 @@
+$schema: https://azuremlschemas.azureedge.net/latest/datastore.schema.json
+name: curated_blob
+type: azure_blob
+account_name: amazondatalake60103990aa
+container_name: curated
+credentials:
+  account_key: <SCzIu2j4IUK5ywztSVbo7EbIgxE1HS5IeXkuh4ktQ2N+BKHqrsU1Wns2RyQbrXFwdtLv2XxdCEyJ+AStCqSelQ==>

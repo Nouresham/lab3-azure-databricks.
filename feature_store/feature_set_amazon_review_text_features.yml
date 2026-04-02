@@ -1,0 +1,16 @@
+name: amazon_review_text_features
+version: "1"
+description: Text features extracted from Amazon Electronics reviews
+entities:
+  - AmazonReview
+stage: development
+specification: feature_set_spec.yaml
+materialization_settings:
+  schedule:
+    type: recurrence
+    frequency: Day
+    interval: 1
+  notification:
+    email_on_job_failure: true
+    emails:
+      - 60103990@udst.edu.qa.com  
